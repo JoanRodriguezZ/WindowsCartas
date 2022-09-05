@@ -65,18 +65,12 @@ namespace WindowsCartas
         private void btnBarajar_Click(object sender, EventArgs e)
         {
             baraja.Barajar();
-            listBoxCartasBaraja.Items.Clear(); 
-            
-            foreach (Carta carta in baraja.barajaList)
-            {
-                listBoxCartasBaraja.Items.Add(carta);
-            }
+            RefrescarLista();
         }
 
         private void btnRobarCarta_Click(object sender, EventArgs e)
         {
-            
-            labelCartaElegida.Text = baraja.RobarCarta().ToString();
+            MostrarCarta(baraja.RobarCarta());
             RefrescarLista();
             ComprobarBaraja();
         }
@@ -86,7 +80,7 @@ namespace WindowsCartas
             Random random = new Random();
 
             int numRandom = random.Next(baraja.ContarCartas() - 1);
-            labelCartaElegida.Text = baraja.CogerCartaAlAzar(numRandom).ToString();
+            MostrarCarta(baraja.CogerCartaAlAzar(numRandom));
             
             RefrescarLista();
             ComprobarBaraja();
@@ -103,14 +97,25 @@ namespace WindowsCartas
 
             if (isParsable)
             {
-                labelCartaElegida.Text = baraja.CogerCarta(cEscogidaInt - 1).ToString();
+                if (cEscogidaInt <= baraja.ContarCartas() && cEscogidaInt > 0)
+                {
+                    MostrarCarta(baraja.CogerCarta(cEscogidaInt - 1));
+                }
+                else
+                    MessageBox.Show("Por favor introduce un numero entre 1 y " + baraja.ContarCartas() + ".");
             }
             else
-                Console.WriteLine("Por favor introduce un valor valido.");
+                MessageBox.Show("Por favor introduce un numero valido.");
 
             RefrescarLista();
             ComprobarBaraja();
 
+        }
+
+        void MostrarCarta(Carta c)
+        {
+            pictureBoxCartaElegida.ImageLocation = "C:\\Users\\tarda\\source\\repos\\WindowsCartas\\Baraja\\" + c.Imagen.ToString();
+            labelCartaElegida.Text = c.ToString();
         }
     }
 }

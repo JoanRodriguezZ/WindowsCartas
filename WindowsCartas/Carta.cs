@@ -10,6 +10,7 @@ namespace WindowsCartas
     {
         int numero;
         int palo;
+        string imagen;
 
         string[] palos = { "Oros", "Copas", "Espadas", "Bastos" };
 
@@ -17,6 +18,7 @@ namespace WindowsCartas
         {
             this.numero = numero;
             this.palo = palo;
+            this.imagen = numero + palos[palo] + ".jpg";
         }
 
 
@@ -30,6 +32,13 @@ namespace WindowsCartas
             get { return palo; }
             set { palo = value; }
         }
+
+        public string Imagen
+        {
+            get { return imagen; }
+            set { imagen = value; }
+        }
+
         public override string ToString()
         {
             return (numero + " de " + palos[palo]);

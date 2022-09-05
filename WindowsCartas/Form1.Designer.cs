@@ -35,13 +35,15 @@ namespace WindowsCartas
             this.btnBarajar = new System.Windows.Forms.Button();
             this.btnCogerCartaRandom = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBoxCartaEspecifica = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnCogerCarta = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxCartaEspecifica = new System.Windows.Forms.TextBox();
             this.labelCarta = new System.Windows.Forms.Label();
             this.listBoxCartasBaraja = new System.Windows.Forms.ListBox();
             this.labelCartaElegida = new System.Windows.Forms.Label();
+            this.pictureBoxCartaElegida = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCartaElegida)).BeginInit();
             this.SuspendLayout();
             // 
             // labelNumCartas
@@ -105,22 +107,6 @@ namespace WindowsCartas
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
-            // textBoxCartaEspecifica
-            // 
-            this.textBoxCartaEspecifica.Location = new System.Drawing.Point(172, 17);
-            this.textBoxCartaEspecifica.Name = "textBoxCartaEspecifica";
-            this.textBoxCartaEspecifica.Size = new System.Drawing.Size(51, 22);
-            this.textBoxCartaEspecifica.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(69, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Posicion carta";
-            // 
             // btnCogerCarta
             // 
             this.btnCogerCarta.Location = new System.Drawing.Point(91, 45);
@@ -131,11 +117,27 @@ namespace WindowsCartas
             this.btnCogerCarta.UseVisualStyleBackColor = true;
             this.btnCogerCarta.Click += new System.EventHandler(this.btnCogerCarta_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(69, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Posicion carta";
+            // 
+            // textBoxCartaEspecifica
+            // 
+            this.textBoxCartaEspecifica.Location = new System.Drawing.Point(172, 17);
+            this.textBoxCartaEspecifica.Name = "textBoxCartaEspecifica";
+            this.textBoxCartaEspecifica.Size = new System.Drawing.Size(51, 22);
+            this.textBoxCartaEspecifica.TabIndex = 0;
+            // 
             // labelCarta
             // 
             this.labelCarta.AutoSize = true;
             this.labelCarta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.labelCarta.Location = new System.Drawing.Point(90, 451);
+            this.labelCarta.Location = new System.Drawing.Point(380, 12);
             this.labelCarta.Name = "labelCarta";
             this.labelCarta.Size = new System.Drawing.Size(58, 24);
             this.labelCarta.TabIndex = 6;
@@ -145,9 +147,10 @@ namespace WindowsCartas
             // 
             this.listBoxCartasBaraja.FormattingEnabled = true;
             this.listBoxCartasBaraja.ItemHeight = 16;
-            this.listBoxCartasBaraja.Location = new System.Drawing.Point(384, 24);
+            this.listBoxCartasBaraja.Location = new System.Drawing.Point(41, 426);
+            this.listBoxCartasBaraja.MultiColumn = true;
             this.listBoxCartasBaraja.Name = "listBoxCartasBaraja";
-            this.listBoxCartasBaraja.Size = new System.Drawing.Size(254, 436);
+            this.listBoxCartasBaraja.Size = new System.Drawing.Size(592, 148);
             this.listBoxCartasBaraja.TabIndex = 7;
             // 
             // labelCartaElegida
@@ -155,16 +158,26 @@ namespace WindowsCartas
             this.labelCartaElegida.AutoSize = true;
             this.labelCartaElegida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.labelCartaElegida.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.labelCartaElegida.Location = new System.Drawing.Point(147, 451);
+            this.labelCartaElegida.Location = new System.Drawing.Point(444, 9);
             this.labelCartaElegida.Name = "labelCartaElegida";
             this.labelCartaElegida.Size = new System.Drawing.Size(0, 24);
             this.labelCartaElegida.TabIndex = 8;
+            // 
+            // pictureBoxCartaElegida
+            // 
+            this.pictureBoxCartaElegida.Location = new System.Drawing.Point(384, 52);
+            this.pictureBoxCartaElegida.Name = "pictureBoxCartaElegida";
+            this.pictureBoxCartaElegida.Size = new System.Drawing.Size(249, 352);
+            this.pictureBoxCartaElegida.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxCartaElegida.TabIndex = 9;
+            this.pictureBoxCartaElegida.TabStop = false;
             // 
             // CartasWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(670, 531);
+            this.ClientSize = new System.Drawing.Size(670, 613);
+            this.Controls.Add(this.pictureBoxCartaElegida);
             this.Controls.Add(this.labelCartaElegida);
             this.Controls.Add(this.listBoxCartasBaraja);
             this.Controls.Add(this.labelCarta);
@@ -178,6 +191,7 @@ namespace WindowsCartas
             this.Text = "Cartas";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCartaElegida)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,6 +211,7 @@ namespace WindowsCartas
         private System.Windows.Forms.Label labelCarta;
         private System.Windows.Forms.ListBox listBoxCartasBaraja;
         private System.Windows.Forms.Label labelCartaElegida;
+        private System.Windows.Forms.PictureBox pictureBoxCartaElegida;
     }
 }
 
